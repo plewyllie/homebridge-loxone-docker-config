@@ -15,7 +15,7 @@ We need to create a new folder which will hold the following files:
 
 Minimal configuration files can be found on this github:
 ```
-curl -O https://github.com/plewyllie/homebridge-loxone-docker-config/blob/main/config.json
+curl -O https://raw.githubusercontent.com/plewyllie/homebridge-loxone-docker-config/main/config.json
 curl -O https://raw.githubusercontent.com/plewyllie/homebridge-loxone-docker-config/main/package.json
 ```
 
