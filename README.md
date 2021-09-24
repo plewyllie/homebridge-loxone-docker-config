@@ -14,8 +14,10 @@ We need to create a new folder which will hold the following files:
 - package.json : This file keeps track of which plugins should be installed to homebridge.
 
 Minimal configuration files can be found on this github:
+```
 curl -O https://github.com/plewyllie/homebridge-loxone-docker-config/blob/main/config.json
 curl -O https://raw.githubusercontent.com/plewyllie/homebridge-loxone-docker-config/main/package.json
+```
 
 Edit the config.json file and change the Loxone host, port, username and password parameters.
 
