@@ -1,0 +1,41 @@
+{
+    "platforms": [
+        {
+            "name": "Config",
+            "port": 8581,
+            "platform": "config"
+        },
+        {
+            "platform": "LoxoneWs",
+            "host": "192.168.1.1",
+            "port": "8765",
+            "username": "username",
+            "password": "password!",
+            "options": {
+                "StairwellSwitch": "pulse",
+                "moodSwitches": "none",
+                "alarmSystem": "delayedon",
+                "alarmTrigerLevel": 5,
+                "autoLock": 1,
+                "autoLockDelay": 5
+            },
+            "alias": {
+                "Lighting": "Lighting",
+                "Outlet": "Outlet",
+                "Doorbell": "Doorbell",
+                "Trigger": "Trigger",
+                "Contact": "Contact",
+                "Motion": "Motion",
+                "Brightness": "Brightness",
+                "Temperature": "Temperature",
+                "Humidity": "Humidity",
+                "Leak": "Leak",
+                "Smoke": "Smoke",
+                "Valve": "Valve",
+                "Sprinklers": "Sprinklers",
+                "Fan": "Fan",
+                "Lock": "Lock"
+            }
+        }
+    ],
+}
