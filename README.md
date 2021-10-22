@@ -22,7 +22,7 @@ curl -O https://raw.githubusercontent.com/plewyllie/homebridge-loxone-docker-con
 Edit the config.json file and change the Loxone host, port, username and password parameters.
 
 # Running the Oznu docker homebridge image
-As stated on Oznu's github page: "Homebridge requires full access to your local network to function correctly which can be achieved using the --net=host flag. This image will not work when using Docker for Mac or Docker for Windows due to this and this."
+As stated on Oznu's github page: "Homebridge requires full access to your local network to function correctly which can be achieved using the --net=host flag. This image will not work when using [Docker for Mac](https://docs.docker.com/docker-for-mac/) or [Docker for Windows](https://docs.docker.com/docker-for-windows/) due to [this](https://github.com/docker/for-mac/issues/68) and [this](https://github.com/docker/for-win/issues/543)."
 
 With this in mind, we can start our container from our running directory containing our config.json and package.json files:
 
