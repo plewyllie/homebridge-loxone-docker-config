@@ -28,4 +28,28 @@ With this in mind, we can start our container from our running directory contain
 
 `sudo docker run --net=host --name=homebridge --rm -v $(pwd):/homebridge oznu/homebridge:latest`
 
+# Modifying the Loxone Plugin
+The Loxone plugin is getting more and more complete, but might not fit all your needs. I am using ActiveByte's Loxone plugin as it seems to be the most maintained and up-to-date plugin for Loxone. I forked the repository over [here](https://github.com/plewyllie/homebridge-loxone-connect). Feel free to fork mine or the original repo if you would like to modify it.
+
+The plugin is based on npm, so make sure to have npm installed on your machine. On OSX you can install it with `brew install npm`.
+
+We will modify the `package.json` file in the forked repo and change the package name and references, so it will be possible to publish it and use the modified version in our Oznu Docker image. Make sure to change the following elements:
+- name, this needs to be a unique name on the npm package manager
+- point the git URL to your fork
+- it would be best practise to also update the links towards issues, readme to your fork as you have modified the package
+
+I will now take you through my process of modifying ActiveByte's plugin to add "EIBBlindsItem" to control KNX blinds.
+* Adding the `EIBBlindsItem.js` to the `items` folder
+* Modifying `Itemsfactory.js` to look for the blinds and register them using the newly defined item
+  * Adding a new modulexport `moduleexports.EIBBlinds = require('../items/EIBBlindsItem.js');`
+  * Adding an if condition to look for Screens `if (item.name.indexOf("Screen") !== -1)[...]`
+  * Adding `this.list_child_pos_UUID = {};` a list used to store the action UUIDs for the blinds.
+  * TODO: Remove Need to check for specific "Screen Slaapkamer" with `if (this.itemList[key].name.indexOf("Screen Slaapkamer")`
+* Modifying `index.js` with 
+
+For this EIBBlinds modification to work, note the following:
+* Loxone items should be named "Screen [ROOM] [function]"
+* [function] == Op_Neer => Main EIBBlindsItem which will have actions, status and be used in HomeKit.
+* [function] == Positie FeedBack => Dummy item (EIBBlindsPositionItem) receiving the value and updating Op_Neer EIBBlindsItem.
+
 
