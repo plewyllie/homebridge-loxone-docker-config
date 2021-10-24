@@ -38,6 +38,7 @@ We will modify the `package.json` file in the forked repo and change the package
 - point the git URL to your fork
 - it would be best practise to also update the links towards issues, readme to your fork as you have modified the package
 
+## EIB Blinds
 I will now take you through my process of modifying ActiveByte's plugin to add "EIBBlindsItem" to control KNX blinds.
 * Adding the `EIBBlindsItem.js` to the `items` folder
 * Modifying `Itemsfactory.js` to look for the blinds and register them using the newly defined item
@@ -52,4 +53,8 @@ For this EIBBlinds modification to work, note the following:
 * [function] == Op_Neer => Main EIBBlindsItem which will have actions, status and be used in HomeKit.
 * [function] == Positie FeedBack => Dummy item (EIBBlindsPositionItem) receiving the value and updating Op_Neer EIBBlindsItem.
 
+## Water Sensor
+TODO
+## Leak Sensor
+TODO
 
